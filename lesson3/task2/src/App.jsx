@@ -17,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Сам ти тупа пізда. А я розумничка ^_^
+          Сам ти тупа пізда. А я розумничка ^_^!!
         </a>
       </header>
     </div>

@@ -11,20 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-#root {
-  display: flex;
-  font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
+* {
+  box-sizing: border-box;
 }
 
-.seconds {
-  width: 150px;
-  height: 50px;
-  border: 3px solid #ccc;
-  border-radius: 8px;
-  font-size: 24px;
-  font-weight: 700;
-  margin: auto;
-  text-align: center;
-  line-height: 50px;
-}
