@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import GoodButton from './GoodButton.jsx';
+import Colors from './Colors';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-
-root.render(<React.StrictMode><GoodButton /></React.StrictMode>);
+root.render(<React.StrictMode><Colors /></React.StrictMode>);
