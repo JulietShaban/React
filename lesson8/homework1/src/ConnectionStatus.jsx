@@ -4,27 +4,30 @@ class ConnectionStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: "online",
+      status: "offline",
     };
   }
   componentDidMount() {
-    this.Swithcer();
+    this.swithcer();
   }
-
-  componentDidMount() {
-    this.Swithcer();
+  componentDidUpdate() {
+    this.turner();
   }
-  Swithcer() {
+  swithcer() {
     if (window.navigator.onLine) {
       this.setState({
         status: "online",
       });
-    } else {
-      this.setState({
+    }
+  }
+  turner() {
+    if (!window.navigator.onLine) {
+      return this.setState({
         status: "offline",
       });
     }
   }
+
   render() {
     if (this.state.status === "online") {
       return <div className="status">Online</div>;
