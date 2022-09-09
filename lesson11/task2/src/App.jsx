@@ -1,37 +1,40 @@
 import React, { Component } from "react";
-import UserProfile from "./UserProfile";
-import UserMenu from "./UserMenu";
+import Dialog from "./Dialog";
 
-class Page extends Component {
+class App extends Component {
   state = {
-    userData: null,
+    isOpen: false,
   };
 
-  componentDidMount() {
-    this.fetchUserData(this.props.userId);
-  }
-
-  fetchUserData = (userId) => {
-    const userUrl = `https://api.github.com/users/${userId}`;
-    fetch(userUrl)
-      .then((response) => response.json())
-      .then((userData) =>
-        this.setState({
-          userData,
-        })
-      );
+  hideDialog = () => {
+    this.setState({
+      isOpen: false,
+    });
   };
 
-  render(){
-  return (
-    <div className="page">
-      <header className="header">
-        <UserMenu userData={this.state.userData} />
-      </header>
-      <UserProfile userData={this.state.userData} />
-    </div>
-  );
-  }
-};
+  showDialog = () => {
+    this.setState({
+      isOpen: true,
+    });
+  };
 
-export default Page;
+  render() {
+    const elem = <p>Some text.</p>;
+    return (
+      <div className="app">
+        <button className="btn" onClick={this.showDialog}>
+          Show
+        </button>
+        <Dialog
+          isOpen={this.state.isOpen}
+          onClose={this.hideDialog}
+          title="Some title"
+        >
+          {elem}
+        </Dialog>
+      </div>
+    );
+  }
+}
+
+export default App;
