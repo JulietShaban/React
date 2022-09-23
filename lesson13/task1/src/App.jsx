@@ -22,7 +22,7 @@ class App extends Component {
             <Route path="*">
               <PageNotFound />
             </Route>
-            </Switch>
+          </Switch>
         </BrowserRouter>
       </div>
     );
